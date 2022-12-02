@@ -25,10 +25,13 @@ Router.get('/test', (request, response) => {
  */
 Router.get('/logs', 'AuthController@logs')
 
+
 /** Open auth routes */
 Router.post('/login', 'AuthController@login')
 Router.post('/auth/forget-password', 'AuthController@forgetPassword')
 Router.post('/auth/reset-password/:token', 'AuthController@resetPassword')
+
+
 
 /**
  * @middleware app.middlewares.passport
@@ -38,5 +41,10 @@ Router.middleware(['app.middlewares.passport'], (_router) => {
   
   /** General routes */
   Router.post('/auth/change-password', 'AuthController@changePassword')
+
+  _router.get('/all', 'LoginController@index')
+  Router.post('/create', 'LoginController@store')
+// _router.post('/create', 'LoginController@store')
+
 
 })
