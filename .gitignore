@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+test.js
+public/staff_images/*
+public/staff_files/*
+public/images/*
+public/chat_files
+.env
+logs/*
+
+package-lock.json
